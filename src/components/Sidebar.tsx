@@ -91,6 +91,11 @@ export function Sidebar({
           Sign Out
         </button>
       </div>
+      <div className="mt-auto border-t border-glass-border pt-3 px-4 pb-4">
+        <p className="text-center text-[9px] text-space-200 leading-relaxed">
+          © {new Date().getFullYear()} PTMS — Developed by Shihab Mohammed  Employee No: 21235
+        </p>
+      </div>
     </aside>
   );
 }

@@ -198,11 +198,6 @@ export function DashboardView({
           )}
         </div>
       </div>
-
-      {/* Footer - Copyright */}
-      <footer className="text-center text-xs text-space-400 mt-8 border-t border-space-700 pt-4">
-        © {new Date().getFullYear()} PTMS — Developed by Shihab Mohammed | Employee ID: 21235
-      </footer>
     </div>
          
   );
