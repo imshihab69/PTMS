@@ -110,7 +110,9 @@ export function LoginScreen({ onLogin }: { onLogin: (u: SessionUser) => void }) 
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-[10px] text-space-300 tracking-widest uppercase">
+          <p className="text-[8px] text-space-300 tracking-widest uppercase">
+              Developed by Shihab Mohammed | Employee ID: 21235
+
             
           </p>
         </div>

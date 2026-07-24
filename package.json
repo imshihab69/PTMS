@@ -1,5 +1,6 @@
 {
-  "name": "nextjs-postgresql-template",
+  "name": "ptms",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -34,5 +35,16 @@
     "postcss": "8.5.8",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3"
+  },
+  "author": {
+    "name": "Shihab Mohammed",
+    "email": "sf.alshrif@gmail.com",
+    "url": "https://github.com/imshihab69"
+  },
+  "description": "PTMS - Phone Terminal Management System",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imshihab69/PTMS"
   }
 }
