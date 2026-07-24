@@ -59,6 +59,7 @@ export async function PUT(
     idfBlock: body.idfBlock ?? before.idfBlock,
     mdfPair: body.mdfPair ?? before.mdfPair,
     mdfCable: body.mdfCable ?? before.mdfCable,
+    location: body.location ?? before.location,
     department: body.department ?? before.department,
     status: body.status ?? before.status,
     note: body.note ?? before.note,
@@ -76,6 +77,7 @@ export async function PUT(
   if (body.idfBlock !== undefined && body.idfBlock !== before.idfBlock) changes.push(`IDF Block from "${before.idfBlock}" to "${body.idfBlock}"`);
   if (body.mdfPair !== undefined && body.mdfPair !== before.mdfPair) changes.push(`MDF Pair from "${before.mdfPair}" to "${body.mdfPair}"`);
   if (body.mdfCable !== undefined && body.mdfCable !== before.mdfCable) changes.push(`MDF Cable from "${before.mdfCable}" to "${body.mdfCable}"`);
+  if (body.location !== undefined && body.location !== before.location) changes.push(`Location from "${before.location}" to "${body.location}"`);
   if (body.department !== undefined && body.department !== before.department) changes.push(`Department from "${before.department}" to "${body.department}"`);
   if (body.status !== undefined && body.status !== before.status) changes.push(`Status from "${before.status}" to "${body.status}"`);
   if (body.note !== undefined && body.note !== before.note) changes.push(`Note updated`);

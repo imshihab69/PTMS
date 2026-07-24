@@ -28,6 +28,7 @@ const emptyForm = {
   idfBlock: "",
   mdfPair: "",
   mdfCable: "",
+  location: "", 
   department: "",
   status: "active",
   note: "",
@@ -83,6 +84,7 @@ export function PhoneRecordsView({
       idfBlock: record.idfBlock || "",
       mdfPair: record.mdfPair || "",
       mdfCable: record.mdfCable || "",
+      location: record.location || "",
       department: record.department || "",
       status: record.status || "active",
       note: record.note || "",
@@ -353,6 +355,8 @@ export function PhoneRecordsView({
                 <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">IDF Block</th>
                 <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">MDF Pair</th>
                 <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">MDF Cable</th>
+                <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">Location</th>
+
                 <th 
                   className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold cursor-pointer hover:text-white transition-colors"
                   onClick={() => handleSort("department")}
@@ -393,6 +397,7 @@ export function PhoneRecordsView({
                     <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.idfBlock || "—"}</td>
                     <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.mdfPair || "—"}</td>
                     <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.mdfCable || "—"}</td>
+                    <td className="px-5 py-3.5 text-sm text-space-100">{record.location || "—"}</td>
                     <td className="px-5 py-3.5 text-sm text-space-100">{record.department || "—"}</td>
                     <td className="px-5 py-3.5">
                       <span className={`inline-flex px-2.5 py-1 rounded-lg text-[10px] font-semibold tracking-wider uppercase border ${statusColor(record.status)}`}>
@@ -483,6 +488,10 @@ export function PhoneRecordsView({
                   <span className="text-space-400">MDF Cable:</span>{" "}
                   <span className="text-space-100 font-mono">{record.mdfCable || "—"}</span>
                 </div>
+                <div>
+                  <span className="text-space-400">Location:</span>{" "}
+                  <span className="text-space-100 font-mono">{record.location || "—"}</span>
+               </div>
               </div>
               <div className="flex gap-2">
                 <button
@@ -595,7 +604,7 @@ export function PhoneRecordsView({
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-white mb-2">Expected Columns</h4>
                   <div className="glass rounded-lg p-3 text-xs text-space-300 font-mono">
-                    Phone Number, IDF Pair, IDF Block, MDF Pair, MDF Cable, Department, Status, Note
+                    Phone Number, IDF Pair, IDF Block, MDF Pair, MDF Cable, Location, Department, Status, Note
                   </div>
                   <p className="text-xs text-space-400 mt-2">
                     Column names are flexible (e.g., &quot;phone&quot;, &quot;Phone Number&quot;, &quot;phone_number&quot; all work)
@@ -691,6 +700,16 @@ export function PhoneRecordsView({
                       placeholder="1 - 6"
                     />
                   </div>
+                </div>
+                <div>
+                 <label className="block text-xs uppercase tracking-widest text-space-200 mb-2">Location</label>
+                 <input
+                   type="text"
+                   value={form.location}
+                   onChange={(e) => setForm({ ...form, location: e.target.value })}
+                   placeholder="e.g., TR-41-A, C-16"
+                   className="w-full"
+                 />
                 </div>
 
                 <div>

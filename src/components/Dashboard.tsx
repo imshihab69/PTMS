@@ -16,6 +16,7 @@ export type PhoneRecord = {
   idfBlock: string | null;
   mdfPair: string | null;
   mdfCable: string | null;
+  location: string | null;
   department: string | null;
   status: string;
   note: string | null;

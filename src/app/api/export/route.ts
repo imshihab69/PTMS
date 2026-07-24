@@ -19,6 +19,7 @@ export async function GET() {
     "IDF Block": r.idfBlock || "",
     "MDF Pair": r.mdfPair || "",
     "MDF Cable": r.mdfCable  || "",
+    "Location": r.location  || "",
     Department: r.department || "",
     Status: (r.status || "active").toUpperCase(),
     Note: r.note || "",

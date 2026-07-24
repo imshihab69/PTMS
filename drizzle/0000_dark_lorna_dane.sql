@@ -17,6 +17,7 @@ CREATE TABLE "phone_records" (
 	"idf_block" varchar(50),
 	"mdf_pair" varchar(50),
 	"mdf_cable" varchar(50),
+	"location" varchar(200),
 	"department" varchar(150),
 	"status" varchar(20) DEFAULT 'active' NOT NULL,
 	"note" text,

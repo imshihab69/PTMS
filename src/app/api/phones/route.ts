@@ -26,10 +26,11 @@ export async function GET(req: NextRequest) {
         ilike(phoneRecords.phoneNumber, pattern),
         ilike(phoneRecords.department, pattern),
         ilike(phoneRecords.note, pattern),
+        ilike(phoneRecords.location, pattern),
         ilike(phoneRecords.idfPair, pattern),
         ilike(phoneRecords.idfBlock, pattern),
         ilike(phoneRecords.mdfPair, pattern),
-        ilike(phoneRecords.mdfCable, pattern)
+        ilike(phoneRecords.mdfCable, pattern),
       )
     );
   }
@@ -58,7 +59,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { phoneNumber, idfPair, idfBlock, mdfPair, mdfCable, department, status, note } = body;
+  const { phoneNumber, idfPair, idfBlock, mdfPair, mdfCable, location, department, status, note } = body;
 
   if (!phoneNumber) {
     return NextResponse.json({ error: "Phone number is required" }, { status: 400 });
@@ -81,6 +82,7 @@ export async function POST(req: NextRequest) {
     idfBlock: idfBlock || null,
     mdfPair: mdfPair || null,
     mdfCable: mdfCable || null,
+    location: location || null,
     department: department || null,
     status: status || "active",
     note: note || null,

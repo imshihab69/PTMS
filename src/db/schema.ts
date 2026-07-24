@@ -28,6 +28,7 @@ export const phoneRecords = pgTable("phone_records", {
   idfBlock: varchar("idf_block", { length: 50 }),
   mdfPair: varchar("mdf_pair", { length: 50 }),
   mdfCable: varchar("mdf_cable", { length: 50 }),
+  location: varchar("location", { length: 200 }),
   department: varchar("department", { length: 150 }),
   status: varchar("status", { length: 20 }).notNull().default("active"), // active | inactive | maintenance
   note: text("note"),
