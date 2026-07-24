@@ -14,9 +14,9 @@ CREATE TABLE "audit_log" (
 CREATE TABLE "phone_records" (
 	"phone_number" varchar(30) PRIMARY KEY NOT NULL,
 	"idf_pair" varchar(50),
-	"idf_cable" varchar(50),
+	"idf_block" varchar(50),
 	"mdf_pair" varchar(50),
-	"mdf_block" varchar(50),
+	"mdf_cable" varchar(50),
 	"department" varchar(150),
 	"status" varchar(20) DEFAULT 'active' NOT NULL,
 	"note" text,

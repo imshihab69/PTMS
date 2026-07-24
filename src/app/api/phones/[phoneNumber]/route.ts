@@ -56,9 +56,9 @@ export async function PUT(
 
   const updates = {
     idfPair: body.idfPair ?? before.idfPair,
-    idfCable: body.idfCable ?? before.idfCable,
+    idfBlock: body.idfBlock ?? before.idfBlock,
     mdfPair: body.mdfPair ?? before.mdfPair,
-    mdfBlock: body.mdfBlock ?? before.mdfBlock,
+    mdfCable: body.mdfCable ?? before.mdfCable,
     department: body.department ?? before.department,
     status: body.status ?? before.status,
     note: body.note ?? before.note,
@@ -73,9 +73,9 @@ export async function PUT(
   // Build human-readable description
   const changes: string[] = [];
   if (body.idfPair !== undefined && body.idfPair !== before.idfPair) changes.push(`IDF Pair from "${before.idfPair}" to "${body.idfPair}"`);
-  if (body.idfCable !== undefined && body.idfCable !== before.idfCable) changes.push(`IDF Cable from "${before.idfCable}" to "${body.idfCable}"`);
+  if (body.idfBlock !== undefined && body.idfBlock !== before.idfBlock) changes.push(`IDF Block from "${before.idfBlock}" to "${body.idfBlock}"`);
   if (body.mdfPair !== undefined && body.mdfPair !== before.mdfPair) changes.push(`MDF Pair from "${before.mdfPair}" to "${body.mdfPair}"`);
-  if (body.mdfBlock !== undefined && body.mdfBlock !== before.mdfBlock) changes.push(`MDF Block from "${before.mdfBlock}" to "${body.mdfBlock}"`);
+  if (body.mdfCable !== undefined && body.mdfCable !== before.mdfCable) changes.push(`MDF Cable from "${before.mdfCable}" to "${body.mdfCable}"`);
   if (body.department !== undefined && body.department !== before.department) changes.push(`Department from "${before.department}" to "${body.department}"`);
   if (body.status !== undefined && body.status !== before.status) changes.push(`Status from "${before.status}" to "${body.status}"`);
   if (body.note !== undefined && body.note !== before.note) changes.push(`Note updated`);

@@ -16,9 +16,9 @@ export async function GET() {
   const wsData = rows.map((r) => ({
     "Phone Number": r.phoneNumber,
     "IDF Pair": r.idfPair || "",
-    "IDF Cable": r.idfCable || "",
+    "IDF Block": r.idfBlock || "",
     "MDF Pair": r.mdfPair || "",
-    "MDF Block": r.mdfBlock || "",
+    "MDF Cable": r.mdfCable  || "",
     Department: r.department || "",
     Status: (r.status || "active").toUpperCase(),
     Note: r.note || "",

@@ -13,9 +13,9 @@ import { IconMenu, IconClose } from "./Icons";
 export type PhoneRecord = {
   phoneNumber: string;
   idfPair: string | null;
-  idfCable: string | null;
+  idfBlock: string | null;
   mdfPair: string | null;
-  mdfBlock: string | null;
+  mdfCable: string | null;
   department: string | null;
   status: string;
   note: string | null;

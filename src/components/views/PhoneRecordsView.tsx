@@ -25,9 +25,9 @@ type SortDir = "asc" | "desc";
 const emptyForm = {
   phoneNumber: "",
   idfPair: "",
-  idfCable: "",
+  idfBlock: "",
   mdfPair: "",
-  mdfBlock: "",
+  mdfCable: "",
   department: "",
   status: "active",
   note: "",
@@ -80,9 +80,9 @@ export function PhoneRecordsView({
     setForm({
       phoneNumber: record.phoneNumber,
       idfPair: record.idfPair || "",
-      idfCable: record.idfCable || "",
+      idfBlock: record.idfBlock || "",
       mdfPair: record.mdfPair || "",
-      mdfBlock: record.mdfBlock || "",
+      mdfCable: record.mdfCable || "",
       department: record.department || "",
       status: record.status || "active",
       note: record.note || "",
@@ -350,9 +350,9 @@ export function PhoneRecordsView({
                   Phone Number <SortIcon field="phoneNumber" />
                 </th>
                 <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">IDF Pair</th>
-                <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">IDF Cable</th>
+                <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">IDF Block</th>
                 <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">MDF Pair</th>
-                <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">MDF Block</th>
+                <th className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold">MDF Cable</th>
                 <th 
                   className="px-5 py-3.5 text-left text-[10px] tracking-widest uppercase text-space-300 font-semibold cursor-pointer hover:text-white transition-colors"
                   onClick={() => handleSort("department")}
@@ -390,9 +390,9 @@ export function PhoneRecordsView({
                       </span>
                     </td>
                     <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.idfPair || "—"}</td>
-                    <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.idfCable || "—"}</td>
+                    <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.idfBlock || "—"}</td>
                     <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.mdfPair || "—"}</td>
-                    <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.mdfBlock || "—"}</td>
+                    <td className="px-5 py-3.5 text-sm text-space-100 font-mono">{record.mdfCable || "—"}</td>
                     <td className="px-5 py-3.5 text-sm text-space-100">{record.department || "—"}</td>
                     <td className="px-5 py-3.5">
                       <span className={`inline-flex px-2.5 py-1 rounded-lg text-[10px] font-semibold tracking-wider uppercase border ${statusColor(record.status)}`}>
@@ -472,16 +472,16 @@ export function PhoneRecordsView({
                   <span className="text-space-100 font-mono">{record.idfPair || "—"}</span>
                 </div>
                 <div>
-                  <span className="text-space-400">IDF Cable:</span>{" "}
-                  <span className="text-space-100 font-mono">{record.idfCable || "—"}</span>
+                  <span className="text-space-400">IDF Block:</span>{" "}
+                  <span className="text-space-100 font-mono">{record.idfBlock || "—"}</span>
                 </div>
                 <div>
                   <span className="text-space-400">MDF Pair:</span>{" "}
                   <span className="text-space-100 font-mono">{record.mdfPair || "—"}</span>
                 </div>
                 <div>
-                  <span className="text-space-400">MDF Block:</span>{" "}
-                  <span className="text-space-100 font-mono">{record.mdfBlock || "—"}</span>
+                  <span className="text-space-400">MDF Cable:</span>{" "}
+                  <span className="text-space-100 font-mono">{record.mdfCable || "—"}</span>
                 </div>
               </div>
               <div className="flex gap-2">
@@ -595,7 +595,7 @@ export function PhoneRecordsView({
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-white mb-2">Expected Columns</h4>
                   <div className="glass rounded-lg p-3 text-xs text-space-300 font-mono">
-                    Phone Number, IDF Pair, IDF Cable, MDF Pair, MDF Block, Department, Status, Note
+                    Phone Number, IDF Pair, IDF Block, MDF Pair, MDF Cable, Department, Status, Note
                   </div>
                   <p className="text-xs text-space-400 mt-2">
                     Column names are flexible (e.g., &quot;phone&quot;, &quot;Phone Number&quot;, &quot;phone_number&quot; all work)
@@ -639,7 +639,7 @@ export function PhoneRecordsView({
                       value={form.phoneNumber}
                       onChange={(e) => setForm({ ...form, phoneNumber: e.target.value })}
                       disabled={drawerMode === "edit"}
-                      placeholder="e.g., 555-0100"
+                      placeholder="e.g., 88500"
                       className={`w-full ${drawerMode === "edit" ? "!opacity-60 cursor-not-allowed" : ""}`}
                       required
                     />
@@ -658,16 +658,16 @@ export function PhoneRecordsView({
                       type="text"
                       value={form.idfPair}
                       onChange={(e) => setForm({ ...form, idfPair: e.target.value })}
-                      placeholder="e.g., 01-A"
+                      placeholder="1 - 400"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-space-200 mb-2">IDF Cable</label>
+                    <label className="block text-xs uppercase tracking-widest text-space-200 mb-2">IDF Block</label>
                     <input
                       type="text"
-                      value={form.idfCable}
-                      onChange={(e) => setForm({ ...form, idfCable: e.target.value })}
-                      placeholder="e.g., CAB-14"
+                      value={form.idfBlock}
+                      onChange={(e) => setForm({ ...form, idfBlock: e.target.value })}
+                      placeholder="1-2"
                     />
                   </div>
                 </div>
@@ -679,16 +679,16 @@ export function PhoneRecordsView({
                       type="text"
                       value={form.mdfPair}
                       onChange={(e) => setForm({ ...form, mdfPair: e.target.value })}
-                      placeholder="e.g., 02-B"
+                      placeholder="1 - 400"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-space-200 mb-2">MDF Block</label>
+                    <label className="cable text-xs uppercase tracking-widest text-space-200 mb-2">MDF Cable</label>
                     <input
                       type="text"
-                      value={form.mdfBlock}
-                      onChange={(e) => setForm({ ...form, mdfBlock: e.target.value })}
-                      placeholder="e.g., BLK-3"
+                      value={form.mdfCable}
+                      onChange={(e) => setForm({ ...form, mdfCable: e.target.value })}
+                      placeholder="1 - 6"
                     />
                   </div>
                 </div>
@@ -699,7 +699,7 @@ export function PhoneRecordsView({
                     type="text"
                     value={form.department}
                     onChange={(e) => setForm({ ...form, department: e.target.value })}
-                    placeholder="e.g., Human Resources"
+                    placeholder="e.g., ICT"
                   />
                 </div>
 

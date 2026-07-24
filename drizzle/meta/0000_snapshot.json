@@ -94,8 +94,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "idf_cable": {
-          "name": "idf_cable",
+        "idf_block": {
+          "name": "idf_block",
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": false
@@ -106,8 +106,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "mdf_block": {
-          "name": "mdf_block",
+        "mdf_cable": {
+          "name": "mdf_cable",
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": false
