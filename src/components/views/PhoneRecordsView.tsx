@@ -676,7 +676,7 @@ export function PhoneRecordsView({
                       type="text"
                       value={form.idfBlock}
                       onChange={(e) => setForm({ ...form, idfBlock: e.target.value })}
-                      placeholder="1-2"
+                      placeholder="1 - 6"
                     />
                   </div>
                 </div>
@@ -697,7 +697,7 @@ export function PhoneRecordsView({
                       type="text"
                       value={form.mdfCable}
                       onChange={(e) => setForm({ ...form, mdfCable: e.target.value })}
-                      placeholder="1 - 6"
+                      placeholder="1 - 2"
                     />
                   </div>
                 </div>
